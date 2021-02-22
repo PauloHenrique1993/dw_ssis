@@ -1,0 +1,939 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/30/2021 10:06:55 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-MJ5SA0G"
+  DTS:CreatorName="DESKTOP-MJ5SA0G\Paulo"
+  DTS:DTSID="{A511D9EA-76A9-4B46-9083-3C2DEB493838}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3008.28"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="CARGA_FORMA"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{F15225C1-4962-48D5-B6FD-6166E0496508}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-MJ5SA0G\MSSQLSERVER01.COMERCIO_DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{AB19D424-4AD2-4239-9505-BB629338711D}"
+      DTS:ObjectName="DESKTOP-MJ5SA0G\MSSQLSERVER01.COMERCIO_DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-MJ5SA0G\MSSQLSERVER01;Initial Catalog=COMERCIO_DW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-MJ5SA0G\MSSQLSERVER01.COMERCIO_OLTP]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A0C2AD40-2BC8-4791-8EE0-40E53DB41477}"
+      DTS:ObjectName="DESKTOP-MJ5SA0G\MSSQLSERVER01.COMERCIO_OLTP">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-MJ5SA0G\MSSQLSERVER01;Initial Catalog=COMERCIO_OLTP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-MJ5SA0G\MSSQLSERVER01.COMERCIO_STAGE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F50EF66A-DFF4-477A-A41A-A075CA5731B5}"
+      DTS:ObjectName="DESKTOP-MJ5SA0G\MSSQLSERVER01.COMERCIO_STAGE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-MJ5SA0G\MSSQLSERVER01;Initial Catalog=COMERCIO_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CARGA DW"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{2B0C5A68-D52B-4DFB-BD7C-3C44D02C4B8A}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CARGA DW">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\CARGA DW\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{345DA1D3-387B-404B-BB26-5320A7C75D87}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\CARGA DW\Data Flow Task\FORMA"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="FORMA"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[DIM_FORMA]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARGA DW\Data Flow Task\FORMA.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-MJ5SA0G\MSSQLSERVER01.COMERCIO_DW]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-MJ5SA0G\MSSQLSERVER01.COMERCIO_DW]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\CARGA DW\Data Flow Task\FORMA.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\CARGA DW\Data Flow Task\FORMA.Inputs[OLE DB Destination Input].Columns[IDFORMA]"
+                          cachedDataType="i4"
+                          cachedName="IDFORMA"
+                          externalMetadataColumnId="Package\CARGA DW\Data Flow Task\FORMA.Inputs[OLE DB Destination Input].ExternalColumns[IDFORMA]"
+                          lineageId="Package\CARGA DW\Data Flow Task\ST_FORMA.Outputs[OLE DB Source Output].Columns[IDFORMA]" />
+                        <inputColumn
+                          refId="Package\CARGA DW\Data Flow Task\FORMA.Inputs[OLE DB Destination Input].Columns[FORMA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="FORMA"
+                          externalMetadataColumnId="Package\CARGA DW\Data Flow Task\FORMA.Inputs[OLE DB Destination Input].ExternalColumns[FORMA]"
+                          lineageId="Package\CARGA DW\Data Flow Task\ST_FORMA.Outputs[OLE DB Source Output].Columns[FORMA]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARGA DW\Data Flow Task\FORMA.Inputs[OLE DB Destination Input].ExternalColumns[IDSK]"
+                          dataType="i4"
+                          name="IDSK" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA DW\Data Flow Task\FORMA.Inputs[OLE DB Destination Input].ExternalColumns[IDFORMA]"
+                          dataType="i4"
+                          name="IDFORMA" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA DW\Data Flow Task\FORMA.Inputs[OLE DB Destination Input].ExternalColumns[FORMA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="FORMA" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\CARGA DW\Data Flow Task\FORMA.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\CARGA DW\Data Flow Task\FORMA.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA DW\Data Flow Task\FORMA.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARGA DW\Data Flow Task\FORMA.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARGA DW\Data Flow Task\FORMA.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARGA DW\Data Flow Task\FORMA.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\CARGA DW\Data Flow Task\ST_FORMA"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="ST_FORMA"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [IDFORMA]
+      ,[FORMA]
+  FROM [COMERCIO_STAGE].[dbo].[ST_FORMA]
+  WHERE IDFORMA NOT IN 
+  (SELECT IDFORMA FROM COMERCIO_DW.DBO.DIM_FORMA)</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARGA DW\Data Flow Task\ST_FORMA.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-MJ5SA0G\MSSQLSERVER01.COMERCIO_STAGE]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-MJ5SA0G\MSSQLSERVER01.COMERCIO_STAGE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\CARGA DW\Data Flow Task\ST_FORMA.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA DW\Data Flow Task\ST_FORMA.Outputs[OLE DB Source Output].Columns[IDFORMA]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA DW\Data Flow Task\ST_FORMA.Outputs[OLE DB Source Output].ExternalColumns[IDFORMA]"
+                          lineageId="Package\CARGA DW\Data Flow Task\ST_FORMA.Outputs[OLE DB Source Output].Columns[IDFORMA]"
+                          name="IDFORMA"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA DW\Data Flow Task\ST_FORMA.Outputs[OLE DB Source Output].Columns[FORMA]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA DW\Data Flow Task\ST_FORMA.Outputs[OLE DB Source Output].ExternalColumns[FORMA]"
+                          length="50"
+                          lineageId="Package\CARGA DW\Data Flow Task\ST_FORMA.Outputs[OLE DB Source Output].Columns[FORMA]"
+                          name="FORMA"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARGA DW\Data Flow Task\ST_FORMA.Outputs[OLE DB Source Output].ExternalColumns[IDFORMA]"
+                          dataType="i4"
+                          name="IDFORMA" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA DW\Data Flow Task\ST_FORMA.Outputs[OLE DB Source Output].ExternalColumns[FORMA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FORMA" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\CARGA DW\Data Flow Task\ST_FORMA.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA DW\Data Flow Task\ST_FORMA.Outputs[OLE DB Source Error Output].Columns[IDFORMA]"
+                          dataType="i4"
+                          lineageId="Package\CARGA DW\Data Flow Task\ST_FORMA.Outputs[OLE DB Source Error Output].Columns[IDFORMA]"
+                          name="IDFORMA" />
+                        <outputColumn
+                          refId="Package\CARGA DW\Data Flow Task\ST_FORMA.Outputs[OLE DB Source Error Output].Columns[FORMA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\CARGA DW\Data Flow Task\ST_FORMA.Outputs[OLE DB Source Error Output].Columns[FORMA]"
+                          name="FORMA" />
+                        <outputColumn
+                          refId="Package\CARGA DW\Data Flow Task\ST_FORMA.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARGA DW\Data Flow Task\ST_FORMA.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARGA DW\Data Flow Task\ST_FORMA.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARGA DW\Data Flow Task\ST_FORMA.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\CARGA DW\Data Flow Task.Paths[OLE DB Source Output]"
+                  endId="Package\CARGA DW\Data Flow Task\FORMA.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\CARGA DW\Data Flow Task\ST_FORMA.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CARGA STAGE"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{38D0CE07-82C7-41F2-92C9-8931E290750E}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CARGA STAGE">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\CARGA STAGE\STAGE FORMA"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{620354C1-B848-456E-B828-C8313E71AB11}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="STAGE FORMA"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="FORMA_PAGAMENTO"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        IDFORMA, FORMA
+FROM            FORMA_PAGAMENTO</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-MJ5SA0G\MSSQLSERVER01.COMERCIO_OLTP]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-MJ5SA0G\MSSQLSERVER01.COMERCIO_OLTP]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO.Outputs[OLE DB Source Output].Columns[IDFORMA]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO.Outputs[OLE DB Source Output].ExternalColumns[IDFORMA]"
+                          lineageId="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO.Outputs[OLE DB Source Output].Columns[IDFORMA]"
+                          name="IDFORMA"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO.Outputs[OLE DB Source Output].Columns[FORMA]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO.Outputs[OLE DB Source Output].ExternalColumns[FORMA]"
+                          length="40"
+                          lineageId="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO.Outputs[OLE DB Source Output].Columns[FORMA]"
+                          name="FORMA"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO.Outputs[OLE DB Source Output].ExternalColumns[IDFORMA]"
+                          dataType="i4"
+                          name="IDFORMA" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO.Outputs[OLE DB Source Output].ExternalColumns[FORMA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          name="FORMA" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO.Outputs[OLE DB Source Error Output].Columns[IDFORMA]"
+                          dataType="i4"
+                          lineageId="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO.Outputs[OLE DB Source Error Output].Columns[IDFORMA]"
+                          name="IDFORMA" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO.Outputs[OLE DB Source Error Output].Columns[FORMA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          lineageId="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO.Outputs[OLE DB Source Error Output].Columns[FORMA]"
+                          name="FORMA" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\CARGA STAGE\STAGE FORMA\ST_FORMA"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="ST_FORMA"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[ST_FORMA]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CARGA STAGE\STAGE FORMA\ST_FORMA.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-MJ5SA0G\MSSQLSERVER01.COMERCIO_STAGE]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-MJ5SA0G\MSSQLSERVER01.COMERCIO_STAGE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\CARGA STAGE\STAGE FORMA\ST_FORMA.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE FORMA\ST_FORMA.Inputs[OLE DB Destination Input].Columns[IDFORMA]"
+                          cachedDataType="i4"
+                          cachedName="IDFORMA"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FORMA\ST_FORMA.Inputs[OLE DB Destination Input].ExternalColumns[IDFORMA]"
+                          lineageId="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO.Outputs[OLE DB Source Output].Columns[IDFORMA]" />
+                        <inputColumn
+                          refId="Package\CARGA STAGE\STAGE FORMA\ST_FORMA.Inputs[OLE DB Destination Input].Columns[FORMA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="FORMA"
+                          externalMetadataColumnId="Package\CARGA STAGE\STAGE FORMA\ST_FORMA.Inputs[OLE DB Destination Input].ExternalColumns[FORMA]"
+                          lineageId="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO.Outputs[OLE DB Source Output].Columns[FORMA]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FORMA\ST_FORMA.Inputs[OLE DB Destination Input].ExternalColumns[IDFORMA]"
+                          dataType="i4"
+                          name="IDFORMA" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STAGE\STAGE FORMA\ST_FORMA.Inputs[OLE DB Destination Input].ExternalColumns[FORMA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FORMA" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\CARGA STAGE\STAGE FORMA\ST_FORMA.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\CARGA STAGE\STAGE FORMA\ST_FORMA.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FORMA\ST_FORMA.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CARGA STAGE\STAGE FORMA\ST_FORMA.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CARGA STAGE\STAGE FORMA\ST_FORMA.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CARGA STAGE\STAGE FORMA\ST_FORMA.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\CARGA STAGE\STAGE FORMA.Paths[OLE DB Source Output]"
+                  endId="Package\CARGA STAGE\STAGE FORMA\ST_FORMA.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CARGA STAGE\TRUNCATE ST_FORMA"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{02DCF288-90B0-4B79-BADD-F97692971DC0}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRUNCATE ST_FORMA"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{F50EF66A-DFF4-477A-A41A-A075CA5731B5}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE ST_FORMA" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\CARGA STAGE.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{F1571060-4375-40A2-B0B9-578744E0AC3E}"
+          DTS:From="Package\CARGA STAGE\TRUNCATE ST_FORMA"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\CARGA STAGE\STAGE FORMA" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{8ED7C906-CEB0-40AB-BE35-CD181777F3FE}"
+      DTS:From="Package\CARGA STAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\CARGA DW" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\CARGA DW\Data Flow Task"
+          TopLeft="36,27" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="223,121"
+          Size="223,164"
+          Id="Package\CARGA DW"
+          TopLeft="512,112" />
+        <NodeLayout
+          Size="148,42"
+          Id="Package\CARGA STAGE\STAGE FORMA"
+          TopLeft="113.5,75.5" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\CARGA STAGE\TRUNCATE ST_FORMA"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package\CARGA STAGE.PrecedenceConstraints[Constraint]"
+          TopLeft="99,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="88.5,28"
+              Start="0,0"
+              End="88.5,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10"
+                    Point2="0,14"
+                    Point3="4,14" />
+                  <mssgle:LineSegment
+                    End="84.5,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="84.5,14"
+                    Point2="88.5,14"
+                    Point3="88.5,18" />
+                  <mssgle:LineSegment
+                    End="88.5,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="266,172"
+          Size="266,215"
+          Id="Package\CARGA STAGE"
+          TopLeft="113,109" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="379,216.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="133,-22.5"
+              Start="0,0"
+              End="125.5,-22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="62.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="62.5,0"
+                    Point2="66.5,0"
+                    Point3="66.5,-4" />
+                  <mssgle:LineSegment
+                    End="66.5,-18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="66.5,-18.5"
+                    Point2="66.5,-22.5"
+                    Point3="70.5,-22.5" />
+                  <mssgle:LineSegment
+                    End="125.5,-22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\CARGA DW\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="131,42"
+          Id="Package\CARGA DW\Data Flow Task\ST_FORMA"
+          TopLeft="340,68" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\CARGA DW\Data Flow Task\FORMA"
+          TopLeft="383,154" />
+        <EdgeLayout
+          Id="Package\CARGA DW\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="405.5,110">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="34,44"
+              Start="0,0"
+              End="34,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18"
+                    Point2="0,22"
+                    Point3="4,22" />
+                  <mssgle:LineSegment
+                    End="30,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30,22"
+                    Point2="34,22"
+                    Point3="34,26" />
+                  <mssgle:LineSegment
+                    End="34,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA DW\Data Flow Task\FORMA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA DW\Data Flow Task\ST_FORMA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\CARGA STAGE\STAGE FORMA">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="180,42"
+          Id="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO"
+          TopLeft="238,94" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\CARGA STAGE\STAGE FORMA\ST_FORMA"
+          TopLeft="352,159" />
+        <EdgeLayout
+          Id="Package\CARGA STAGE\STAGE FORMA.Paths[OLE DB Source Output]"
+          TopLeft="328,136">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="89.5,23"
+              Start="0,0"
+              End="89.5,15.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.5"
+                    Point2="0,11.5"
+                    Point3="4,11.5" />
+                  <mssgle:LineSegment
+                    End="85.5,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="85.5,11.5"
+                    Point2="89.5,11.5"
+                    Point3="89.5,15.5" />
+                  <mssgle:LineSegment
+                    End="89.5,15.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA STAGE\STAGE FORMA\FORMA_PAGAMENTO">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA STAGE\STAGE FORMA\ST_FORMA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
