@@ -1,0 +1,389 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="1068c311-afeb-4b19-b758-cc39dbb1a428" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DIM TEMPO</ID>
+  <Name>DIM TEMPO</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2507" scrolltop="-3889" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8573" y="12779" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DIM_TEMPO" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3519" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000bf0d000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DIM_TEMPO" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-2507</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-3889</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="143909d8-d6e3-41f9-bd18-3cff904c0a92">
+    <DataSourceViewID>COMERCIO DW</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="ca8e86f6-ef07-4cb1-8721-ffb4a27b47d7">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="70017415-93f0-4e87-b79c-840b85d89949">
+      <ID>IDSK</ID>
+      <Name>DATA</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c4124828-c6f8-4aef-84d0-9ba3685d83ee">
+          <DataType>Integer</DataType>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e3fa7463-1e99-40a4-85f7-fe11b8a4a8c4">
+            <TableID>dbo_DIM_TEMPO</TableID>
+            <ColumnID>IDSK</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="6d813c96-cd29-4724-b627-8baad0c45068">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="425766a4-db58-4c84-a9ac-41b279074bf6">
+          <TableID>dbo_DIM_TEMPO</TableID>
+          <ColumnID>DATA</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="449a8598-e8cf-42f0-8d21-dfb56d14f19f">
+          <AttributeID>DIA</AttributeID>
+          <Name>DIA</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3fdcdb1c-a214-4db3-8d07-9f618275cea0">
+          <AttributeID>DIASEMANA</AttributeID>
+          <Name>DIASEMANA</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="5d3d694c-2e4b-43ff-a13b-9c0f1d27a535">
+          <AttributeID>MES</AttributeID>
+          <Name>MES</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6e1db51e-f499-4179-b7cd-d5b4432479eb">
+          <AttributeID>NOMEMES</AttributeID>
+          <Name>NOMEMES</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b565dcbf-6dc3-48c3-bb0f-87f504343699">
+          <AttributeID>QUARTO</AttributeID>
+          <Name>QUARTO</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7758cd22-36c2-4367-a287-c1ce72a4cd4b">
+          <AttributeID>NOMEQUARTO</AttributeID>
+          <Name>NOMEQUARTO</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="be9c8721-35bd-4a33-a88e-a5ac51a64c32">
+          <AttributeID>ANO</AttributeID>
+          <Name>ANO</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="162a30ce-cf94-4c40-8c19-a494a0032833">
+          <AttributeID>ESTACAOANO</AttributeID>
+          <Name>ESTACAOANO</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="cb6824eb-9746-4a07-a45d-4f18e464ea91">
+          <AttributeID>FIMSEMANA</AttributeID>
+          <Name>FIMSEMANA</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="cacf3744-d676-4700-b1c5-3e9c13ab6d3d">
+          <AttributeID>DATACOMPLETA</AttributeID>
+          <Name>DATACOMPLETA</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e28c34e5-8dcc-4724-9b98-5875096e1f63">
+      <ID>DIA</ID>
+      <Name>DIA</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a52b236f-ce0e-4943-b3c3-adf4e440780f">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="aad51125-5bed-415e-b1b9-ec60b0118f3c">
+            <TableID>dbo_DIM_TEMPO</TableID>
+            <ColumnID>DIA</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5080a8e6-d0b1-4a74-b705-0608cfa07ef5">
+      <ID>DIASEMANA</ID>
+      <Name>DIASEMANA</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="628bd844-2f64-488b-84b0-f55f056ae64e">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c843bbb3-67f1-4d0c-9ebd-08b2060295d5">
+            <TableID>dbo_DIM_TEMPO</TableID>
+            <ColumnID>DIASEMANA</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b1777d3a-c1a1-411b-b10a-8e3bd0cbaa89">
+      <ID>MES</ID>
+      <Name>MES</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="89078e37-86e9-48f4-83ed-642d63ad4c57">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e6e192f0-d599-4777-b31b-f5ec07ddb3a2">
+            <TableID>dbo_DIM_TEMPO</TableID>
+            <ColumnID>MES</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e6856bdb-804d-49ae-8773-2306148c7adc">
+      <ID>NOMEMES</ID>
+      <Name>NOMEMES</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3ac440e3-8fb6-407e-a43d-b91057323f56">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d77f04ce-84cf-42da-9236-acbf9f65a24f">
+            <TableID>dbo_DIM_TEMPO</TableID>
+            <ColumnID>NOMEMES</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3a4c2720-e2e1-44c1-bfc9-21d0b47ee212">
+      <ID>QUARTO</ID>
+      <Name>QUARTO</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="456e2b27-ff30-45ce-a16e-4b951f92880b">
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7d7a4a26-4c1d-45ec-b2b2-ffdd9aa7c3b2">
+            <TableID>dbo_DIM_TEMPO</TableID>
+            <ColumnID>QUARTO</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9bbac847-89b9-4bd9-9f14-fa717820e87b">
+      <ID>NOMEQUARTO</ID>
+      <Name>NOMEQUARTO</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2208f794-196a-4f9c-b457-20d9dc156f46">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="eea38248-b784-43b2-b4e0-4e79752c8aa3">
+            <TableID>dbo_DIM_TEMPO</TableID>
+            <ColumnID>NOMEQUARTO</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c07f965f-6b45-4e40-8bef-e569670dbb32">
+      <ID>ANO</ID>
+      <Name>ANO</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8a1479fd-dcbf-43fd-829d-d5e35351aef3">
+          <DataType>WChar</DataType>
+          <DataSize>4</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5886b54d-86bb-46b8-96e0-06b5cc5f62fd">
+            <TableID>dbo_DIM_TEMPO</TableID>
+            <ColumnID>ANO</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="36804e69-0fa6-4e0a-b99d-c377e73987c9">
+      <ID>ESTACAOANO</ID>
+      <Name>ESTACAOANO</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3b10bc2f-bd8d-474b-8908-2d1da59cc448">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7f71d3b4-d59f-44cf-8cea-ba2c5dea3a11">
+            <TableID>dbo_DIM_TEMPO</TableID>
+            <ColumnID>ESTACAOANO</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ce768fdc-db4a-49ad-bb3c-99b8b41e35d1">
+      <ID>FIMSEMANA</ID>
+      <Name>FIMSEMANA</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="509b1848-31d7-443e-9c89-e0c2fb904f13">
+          <DataType>WChar</DataType>
+          <DataSize>3</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bc35d749-0e25-49ca-8462-52fe5c75099d">
+            <TableID>dbo_DIM_TEMPO</TableID>
+            <ColumnID>FIMSEMANA</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e42c17ed-e5c6-4055-8f86-b9cdb7eda424">
+      <ID>DATACOMPLETA</ID>
+      <Name>DATACOMPLETA</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6dbdf208-8f4f-4bd0-850c-31e06b50a394">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="752e1e24-7d8d-4dab-a03f-411c221eaef3">
+            <TableID>dbo_DIM_TEMPO</TableID>
+            <ColumnID>DATACOMPLETA</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="c7d113fa-2d7a-4e89-93e0-a8134a96e9bd">
+      <ID>Hierarchy</ID>
+      <Name>ANO_DIA</Name>
+      <Levels>
+        <Level dwd:design-time-name="2eda9c92-c754-4849-a3d0-4ae769ea58dd">
+          <ID>ANO</ID>
+          <Name>ANO</Name>
+          <SourceAttributeID>ANO</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="fa13e195-03ff-4c81-a3e4-936c31f9cfc6">
+          <ID>QUARTO</ID>
+          <Name>QUARTO</Name>
+          <SourceAttributeID>QUARTO</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="602f5a03-74c8-4972-b585-d447a31b3b74">
+          <ID>MES</ID>
+          <Name>MES</Name>
+          <SourceAttributeID>MES</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="6115b000-0a6c-406a-a19c-24c66abd4615">
+          <ID>DIA</ID>
+          <Name>DIA</Name>
+          <SourceAttributeID>DIA</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="998a1de9-38c6-4b87-8342-e9491cd0d9aa">
+      <ID>Hierarchy 1</ID>
+      <Name>ANO_DIA_NOME</Name>
+      <Levels>
+        <Level dwd:design-time-name="9a1f6298-5000-4d61-a2f5-0fdc0e16d69d">
+          <ID>ANO</ID>
+          <Name>ANO</Name>
+          <SourceAttributeID>ANO</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="18a4b453-b4bd-41fc-9281-c1f8ac9e1cd7">
+          <ID>NOMEQUARTO</ID>
+          <Name>NOMEQUARTO</Name>
+          <SourceAttributeID>NOMEQUARTO</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="9c6b2e53-5a4b-4687-8fba-5ef49869c1e2">
+          <ID>NOMEMES</ID>
+          <Name>NOMEMES</Name>
+          <SourceAttributeID>NOMEMES</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="dbbb6561-b9fa-420d-ae68-6192767c3ac0">
+          <ID>DIA</ID>
+          <Name>DIA</Name>
+          <SourceAttributeID>DIA</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="266951cd-b506-4bab-bd42-da209ff95799">
+      <ID>Hierarchy 2</ID>
+      <Name>ANO_ESTACAO</Name>
+      <Levels>
+        <Level dwd:design-time-name="518a7bb1-6af9-4bdd-a6dd-82c7371a60f8">
+          <ID>ANO</ID>
+          <Name>ANO</Name>
+          <SourceAttributeID>ANO</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="4d0c77f5-5b42-4f16-83bc-5633982b5d6c">
+          <ID>ESTACAOANO</ID>
+          <Name>ESTACAOANO</Name>
+          <SourceAttributeID>ESTACAOANO</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>
