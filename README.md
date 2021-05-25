@@ -1,3 +1,1 @@
-# DW utilizando o SSIS  (SQL Server Integration Services)
-
-## Criação de relatorios usando o SSIS
+# Criação de um DW utilizando o SSIS (SQL Server Integration Services) e relatorios.
